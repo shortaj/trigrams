@@ -28,4 +28,5 @@ def generate_trigrams(text_list):
     return trigram_dict
 
 
-print(main('./text.txt'))
+# print(main('./text.txt'))
+print(get_text('./text.txt'))
