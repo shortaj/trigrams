@@ -1,11 +1,12 @@
 """This module implements the trigrams algorithm."""
 
 import io
+import random
 
 
-def main(file_path):
+def main(file_path, num_words_to_generate=100):
     """A function that calls get_text and generate_trigrams returns dict."""
-    return generate_trigrams(get_text(file_path))
+    return generate_trigrams(get_text(file_path), num_words_to_generate)
 
 
 def get_text(file_path):
@@ -14,8 +15,21 @@ def get_text(file_path):
     return f.read().lower().split()
 
 
-def generate_trigrams(text_list):
-    """A function that returns a dict based on the get_text file."""
+def generate_trigrams(text_list, num_words_to_generate):
+    """Return a trigram string based on the text_list file."""
+    output_string = ''
+    trigram_dict = generate_dict(text_list)
+    arbitrary_word_pair = generate_random_key(trigram_dict)
+
+    for i in range(num_words_to_generate):
+        next_word = generate_random_value(trigram_dict, arbitrary_word_pair)
+        arbitrary_word_pair = arbitrary_word_pair.split()[1] + ' ' + next_word
+        output_string += ' ' + next_word
+
+    return output_string
+
+def generate_dict(text_list):
+    """Return a trigram dictionary"""
     trigram_dict = {}
     for index, word in enumerate(text_list[:-2]):
         key = word + ' ' + text_list[index + 1]
@@ -27,6 +41,11 @@ def generate_trigrams(text_list):
 
     return trigram_dict
 
+def generate_random_key(trigram_dict):
+    return random.choice(list(trigram_dict.keys()))
 
-# print(main('./text.txt'))
-print(get_text('./text.txt'))
+def generate_random_value(trigram_dict, key):
+    return random.choice(trigram_dict.get(key))
+
+
+print(main('./text.txt'))
