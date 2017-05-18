@@ -28,6 +28,7 @@ def generate_trigrams(text_list, num_words_to_generate):
 
     return output_string
 
+
 def generate_dict(text_list):
     """Return a trigram dictionary string."""
     trigram_dict = {}
@@ -41,9 +42,11 @@ def generate_dict(text_list):
 
     return trigram_dict
 
+
 def generate_random_key(trigram_dict):
     """Return a random key from a dictionary."""
     return random.choice(list(trigram_dict.keys()))
+
 
 def generate_random_value(trigram_dict, key):
     """Return a random value from a key in a dictionary."""
