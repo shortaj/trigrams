@@ -56,12 +56,20 @@ def test_generate_random_key(trigram_dict):
     assert generate_random_key(SAMPLE_DICT) in SAMPLE_DICT
 
 
-# @pytest.mark.parametrize('trigram_dict', 'key', SAMPLE_DICT)
-# def test_generate_random_value(trigram_dict, key):
-#     """A test function for generate_random_value."""
-#     from trigrams import generate_random_value
-#     from trigrams import generate_random_key
-#     # assert generate_random_value(SAMPLE_DICT, generate_random_key(SAMPLE_DICT))
-#     assert generate_random_value(SAMPLE_DICT, generate_random_key(SAMPLE_DICT)) in list(SAMPLE_DICT.values())
+def test_generate_random_value():
+    """A test function for generate_random_value."""
+    from trigrams import generate_random_value
+    from trigrams import generate_random_key
+    assert generate_random_value(SAMPLE_DICT, generate_random_key(SAMPLE_DICT))
 
 
+def test_generate_trigrams():
+    """A test function for generate_trigrams."""
+    from trigrams import generate_trigrams
+    assert len(generate_trigrams(SAMPLE_TXT_LIST, 100).split()) == 100
+
+
+def test_main():
+    """A test function for main."""
+    from trigrams import main
+    assert len(main('./text.txt', 50).split()) == 50
