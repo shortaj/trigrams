@@ -43,7 +43,25 @@ def test_get_text(file_path):
 
 
 @pytest.mark.parametrize('text_list', SAMPLE_DICT)
-def test_generate_trigrams(text_list):
-    """A test function for generate_trigrams."""
-    from trigrams import generate_trigrams
-    assert generate_trigrams(SAMPLE_TXT_LIST) == SAMPLE_DICT
+def test_generate_dict(text_list):
+    """A test function for generate_dict."""
+    from trigrams import generate_dict
+    assert generate_dict(SAMPLE_TXT_LIST) == SAMPLE_DICT
+
+
+@pytest.mark.parametrize('trigram_dict', SAMPLE_DICT)
+def test_generate_random_key(trigram_dict):
+    """A test function for generate_random_key."""
+    from trigrams import generate_random_key
+    assert generate_random_key(SAMPLE_DICT) in SAMPLE_DICT
+
+
+# @pytest.mark.parametrize('trigram_dict', 'key', SAMPLE_DICT)
+# def test_generate_random_value(trigram_dict, key):
+#     """A test function for generate_random_value."""
+#     from trigrams import generate_random_value
+#     from trigrams import generate_random_key
+#     # assert generate_random_value(SAMPLE_DICT, generate_random_key(SAMPLE_DICT))
+#     assert generate_random_value(SAMPLE_DICT, generate_random_key(SAMPLE_DICT)) in list(SAMPLE_DICT.values())
+
+

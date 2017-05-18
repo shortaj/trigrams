@@ -28,6 +28,7 @@ def generate_trigrams(text_list, num_words_to_generate):
 
     return output_string
 
+
 def generate_dict(text_list):
     """Return a trigram dictionary string."""
     trigram_dict = {}
