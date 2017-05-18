@@ -41,13 +41,25 @@ def generate_dict(text_list):
 
     return trigram_dict
 
+
 def generate_random_key(trigram_dict):
     """Return a random key from a dictionary."""
     return random.choice(list(trigram_dict.keys()))
+
 
 def generate_random_value(trigram_dict, key):
     """Return a random value from a key in a dictionary."""
     return random.choice(trigram_dict.get(key))
 
+if __name__ == '__main__':
+    import sys
 
-print(main('./text.txt'))
+    if len(sys.argv) == 3:
+        file_path = sys.argv[1]
+        num_of_words = int(sys.argv[2])
+        print(main(file_path, num_of_words))
+    elif len(sys.argv) == 2:
+        file_path = sys.argv[1]
+        print(main(file_path))
+    else:
+        print('Please enter the file path to a text file. A number of words to be generated is optional.')
