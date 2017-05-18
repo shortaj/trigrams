@@ -30,7 +30,7 @@ def generate_trigrams(text_list, num_words_to_generate):
 
 
 def generate_dict(text_list):
-    """Return a trigram dictionary string."""
+    """Return a trigram dictionary."""
     trigram_dict = {}
     for index, word in enumerate(text_list[:-2]):
         key = word + ' ' + text_list[index + 1]
