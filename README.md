@@ -33,4 +33,3 @@ def generate_random_key(trigram_dict):
 ```python
 def generate_random_value(trigram_dict, key):
     """Return a random value from a key in a dictionary."""
-```
