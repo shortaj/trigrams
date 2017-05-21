@@ -1,6 +1,1 @@
-# trigrams
-
-```python
-def test_funct():
-    return 'test return string'
-```
+# Kata Fourteen: Tom Swift Under Milk Wood
