@@ -1,6 +1,7 @@
 # Kata Fourteen: Tom Swift Under Milk Wood
 
-This program takes a text file and adds to it a certain number of words using the trigrams algorithm. 
+This program takes a text file and adds to it a certain number of words using the trigrams algorithm.
+Miguel Pena and Alex Short implemented this program. 
 
 ## Functions
 
