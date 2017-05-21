@@ -1,7 +1,5 @@
 # Kata Fourteen: Tom Swift Under Milk Wood
 
-# Trigrams
-
 Write a verbose README.md file that fully describes what the code in that repository is about, how it works, 
 and how it’s been updated. Try to keep your code comment-free when submitting.
 
