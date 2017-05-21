@@ -6,22 +6,22 @@ This program takes a text file and adds to it a certain number of words using th
 
 ```python
 def main(file_path, num_words_to_generate=100):
-    """A function that calls get_text and generate_trigrams returns dict."""
+    """Return a trigram string based on text file."""
 ```
 
 ```python
 def get_text(file_path):
-    """Get file and returns words in a list."""
+    """Return words in a list from a text file."""
 ```
 
 ```python
 def generate_trigrams(text_list, num_words_to_generate):
-    """Return a trigram string based on the text_list file."""
+    """Return a trigram string based on a list of words."""
 ```
 
 ```python
 def generate_dict(text_list):
-    """Return a trigram dictionary."""
+    """Return a trigram dictionary from a list of words."""
 ```
 
 ```python
@@ -33,6 +33,3 @@ def generate_random_key(trigram_dict):
 def generate_random_value(trigram_dict, key):
     """Return a random value from a key in a dictionary."""
 ```
-
-
-
