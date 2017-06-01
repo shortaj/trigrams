@@ -73,3 +73,24 @@ def test_main():
     """A test function for main."""
     from trigrams import main
     assert len(main('./text.txt', 50).split()) == 50
+
+
+def test_bad_file_path():
+    """Test for bad path input."""
+    from trigrams import main
+    with pytest.raises(TypeError):
+        main([])
+
+
+def test_bad_file_path2():
+    """Cont."""
+    from trigrams import main
+    with pytest.raises(TypeError):
+        main('example.txt')
+
+
+def test_bad_file():
+    """Test for unsuitable amount of words."""
+    from trigrams import main
+    with pytest.raises(ValueError, IndexError):
+        main('bad_text.txt')
